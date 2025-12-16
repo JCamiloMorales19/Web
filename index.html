@@ -191,7 +191,13 @@
             <h3 class="section-title"><i class="fas fa-paper-plane icon-glow"></i> Contacto</h3>
             <div class="contact-info">
                 <p><i class="fas fa-envelope"></i> <b>Email:</b> <a href="mailto:juancamilomoraleslopez@gmail.com">&nbsp; Juancamilomoraleslopez@gmail.com</a></p>
-                <p><i class="fas fa-phone-alt"></i> <b>Telefono:</b> &nbsp;+57 3223096754.</p>
+         <p>
+             <i class="fab fa-whatsapp whatsapp-icon"></i> 
+             <b>Teléfono:</b> 
+             <a href="https://wa.me/573223096754" target="_blank" class="contact-link">
+              +57 3223096754.
+             </a>
+            </p>     
                 <p><i class="fab fa-linkedin"></i> <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/camilo-morales-lopez/" target="_blank">&nbsp; linkedin.com/in/camilo-morales-lopez/</a></p>
                 <p><i class="fas fa-map-marker-alt"></i> <b>Ubicacion:</b>&nbsp; Bogotá, Colombia</p>
             </div>
@@ -231,13 +237,15 @@
             });
         });
     </script>
-    <div id="protection-message" class="protection-popup">
-    <i class="fas fa-user-shield"></i> <span>ACCESO RESTRINGIDO<br>Contenido Protegido Por Juan Camilo Morales Lopez</span>
-    </div>
+<div id="protection-message" class="protection-popup">
+    <i class="fas fa-user-shield"></i>
+    <span>ACCESO RESTRINGIDO<br>Contenido Protegido por Juan Camilo Morales</span>
+</div>
 
-    <script>
+<script>
     const popup = document.getElementById('protection-message');
 
+    // Función para mostrar la alerta neón
     function showMessage() {
         popup.classList.add('show');
         setTimeout(() => {
@@ -245,23 +253,32 @@
         }, 2000);
     }
 
-    // Bloquear click derecho
+    // 1. BLOQUEAR CLICK DERECHO
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
         showMessage();
     }, false);
 
-    // Bloquear atajos de inspección
-    document.addEventListener('keydown', function(e) {
+    // 2. BLOQUEAR ATAJOS DE TECLADO (F12, Ctrl+Shift+I, U, J, C)
+    document.onkeydown = function(e) {
         if (
-            e.key === 'F12' || 
-            (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || 
-            (e.ctrlKey && e.key === 'U')
+            e.keyCode == 123 || 
+            (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67)) || 
+            (e.ctrlKey && e.keyCode == 85)
         ) {
-            e.preventDefault();
             showMessage();
+            return false;
         }
-    });
-    </script>
+    };
+
+    // 3. ANTI-CONSOLA: Mantiene la consola limpia y envía advertencia
+    setInterval(function() {
+        console.clear();
+        console.log("%c¡ALERTA!", "color: #ff0000; font-size: 30px; font-weight: bold; text-shadow: 0 0 10px #ff0000;");
+        console.log("%cEste sistema está protegido. El acceso no autorizado está restringido.", "color: #00bcd4; font-size: 16px;");
+    }, 1000);
+
+
+</script>
 </body>
 </html>

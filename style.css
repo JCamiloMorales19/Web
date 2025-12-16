@@ -650,12 +650,12 @@ width: 100px; /* Tamaño del logo AUMENTADO a 100px */
 
 /* 2. Posicionamiento del Logo Izquierdo */
 .left-logo {
-    left: 40px; /* Separación del borde izquierdo */
+    left: 30px; /* Separación del borde izquierdo */
 }
 
 /* 3. Posicionamiento del Logo Derecho */
 .right-logo {
-    right: 40px; /* Separación del borde derecho */
+    right: 30px; /* Separación del borde derecho */
 }
 
 /* 4. Efecto al pasar el mouse (Opcional) */

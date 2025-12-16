@@ -231,6 +231,37 @@
             });
         });
     </script>
+    <div id="protection-message" class="protection-popup">
+    <i class="fas fa-user-shield"></i> <span>ACCESO RESTRINGIDO<br>Contenido Protegido Por Juan Camilo Morales Lopez</span>
+    </div>
 
+    <script>
+    const popup = document.getElementById('protection-message');
+
+    function showMessage() {
+        popup.classList.add('show');
+        setTimeout(() => {
+            popup.classList.remove('show');
+        }, 2000);
+    }
+
+    // Bloquear click derecho
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        showMessage();
+    }, false);
+
+    // Bloquear atajos de inspección
+    document.addEventListener('keydown', function(e) {
+        if (
+            e.key === 'F12' || 
+            (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || 
+            (e.ctrlKey && e.key === 'U')
+        ) {
+            e.preventDefault();
+            showMessage();
+        }
+    });
+    </script>
 </body>
 </html>

@@ -919,3 +919,46 @@ footer {
 .pdf-box-btn:hover i {
     color: var(--background-dark) !important;
 }
+/* Estilo del mensaje de protección centrado */
+.protection-popup {
+    position: fixed;
+    /* Posicionamiento exacto en el centro */
+    top: 50%;
+    left: 50%;
+    /* El transform asegura el centrado y el efecto de escala inicial */
+    transform: translate(-50%, -50%) scale(0.5);
+    
+    background: rgba(26, 26, 46, 0.98); /* Fondo casi opaco para legibilidad */
+    color: var(--primary-color);
+    padding: 20px 40px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px; /* Bordes un poco más rectos para look técnico */
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1em;
+    z-index: 10000; /* Asegura que esté por encima de TODO */
+    
+    /* Brillo Neón */
+    box-shadow: 0 0 30px var(--primary-color), inset 0 0 10px rgba(0, 188, 212, 0.2);
+    
+    /* Transiciones suaves */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column; /* Icono arriba, texto abajo */
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+/* Estado cuando se muestra */
+.protection-popup.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* Estilo del icono dentro del popup */
+.protection-popup i {
+    font-size: 2.5em;
+    filter: drop-shadow(0 0 5px var(--primary-color));
+}

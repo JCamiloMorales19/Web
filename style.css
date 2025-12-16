@@ -874,6 +874,51 @@ footer {
     }
     /* ======================================================= */
 }
+/* Estilo de cuadrito para el botón PDF */
+.pdf-box-btn {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    
+    /* Colores y Borde */
+    color: var(--text-light) !important;
+    background-color: rgba(0, 188, 212, 0.15); /* Fondo cian muy sutil */
+    border: 1.5px solid var(--primary-color);
+    
+    /* Espaciado y Forma */
+    padding: 3px 8px;
+    margin-left: 8px;
+    border-radius: 4px; /* Cuadradito con esquinas apenas redondeadas */
+    
+    /* Tipografía */
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75em;
+    font-weight: bold;
+    
+    /* Efecto Neón */
+    box-shadow: 0 0 8px rgba(0, 188, 212, 0.4);
+    transition: all 0.3s ease;
+    vertical-align: middle;
+}
+
+/* Icono dentro del cuadrito */
+.pdf-box-btn i {
+    margin-right: 6px;
+    color: var(--primary-color) !important; /* Color Cian */
+    font-size: 1.1em; /* Un poco más grande para que destaque */
+    filter: drop-shadow(0 0 2px var(--primary-color)); /* Pequeño resplandor al icono */
+}
+/* Efecto al pasar el mouse (Hover) */
+.pdf-box-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--background-dark) !important;
+    box-shadow: 0 0 15px var(--primary-color);
+    transform: translateY(-1px);
+}
+
+.pdf-box-btn:hover i {
+    color: var(--background-dark) !important;
+}
 /* Estilo del mensaje de protección centrado */
 .protection-popup {
     position: fixed;

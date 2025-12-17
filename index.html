@@ -278,7 +278,37 @@
         console.log("%cEste sistema está protegido. El acceso no autorizado está restringido.", "color: #00bcd4; font-size: 16px;");
     }, 1000);
 
-
+         // ==========================================================
+        // FUNCIÓN DE RELOJ EN TIEMPO REAL (MODIFICADO A 12 HORAS)
+        // ==========================================================
+        function updateClock() {
+        const now = new Date();
+         // Opciones para el formato de la hora (AHORA CON hour12: true)
+        const timeOptions = { 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit', 
+        hour12: true // Cambiado a TRUE para formato AM/PM
+        };
+         // Opciones para el formato de la fecha (se mantiene igual)
+        const dateOptions = { 
+        weekday: 'short', 
+        year: 'numeric', 
+        month: '2-digit', 
+        day: '2-digit' 
+        };
+        // Obtenemos la hora y fecha local del usuario
+        const timeString = now.toLocaleTimeString(navigator.language, timeOptions);
+        const dateString = now.toLocaleDateString(navigator.language, dateOptions);
+        // Actualizamos los elementos en el HTML
+        document.getElementById('clock-time').textContent = timeString;
+        document.getElementById('clock-date').textContent = dateString;
+        }   
+        // 1. Ejecutar inmediatamente para evitar el parpadeo inicial
+        updateClock();
+        // 2. Actualizar cada segundo (1000 milisegundos)
+        setInterval(updateClock, 1000);
+        // ==========================================================
 </script>
 </body>
 </html>

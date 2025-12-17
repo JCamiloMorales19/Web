@@ -980,3 +980,243 @@ img {
 input, textarea {
     user-select: text;
 }
+/* ========================================================== */
+/* ESTILO DEL BOTÓN DE DESCARGA (Download CV) */
+/* ========================================================== */
+.btn-primary-neon {
+    display: inline-block;
+    
+    /* Posicionamiento y Estilo */
+    margin-top: 35px; /* Espacio para separarlo de la profesión */
+    padding: 12px 30px;
+    border: 3px solid var(--primary-color);
+    border-radius: 8px;
+    
+    /* Tipografía y Color */
+    color: white;
+    background-color: transparent;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    
+    /* Efecto Neón Inicial */
+    text-shadow: 0 0 10px var(--primary-color); 
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.5); /* Brillo alrededor */
+    
+    /* Transición para el efecto hover */
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary-neon i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Efecto Hover: Relleno completo y Brillo máximo */
+.btn-primary-neon:hover {
+    background-color: var(--primary-color);
+    color: var(--background-dark); /* Texto oscuro sobre el fondo cian */
+    transform: translateY(-3px) scale(1.02);
+    
+    /* El brillo se intensifica */
+    box-shadow: 0 0 25px var(--primary-color), 
+                0 0 40px var(--glow-color);
+    text-shadow: none; /* Quitamos el brillo del texto cuando el fondo está lleno */
+}
+@media (max-width: 480px) {
+    /* ... otros estilos para 480px ... */
+
+    .profile-avatar {
+        width: 150px; 
+        height: 150px;
+    }
+    .header-tagline .tag {
+        margin: 5px;
+        padding: 6px 10px;
+    }
+    main {
+        padding: 0 15px;
+    }
+    .futuristic-card {
+        padding: 20px;
+    }
+    
+    /* === NUEVA REGLA: OCULTAR LOGOS DEL FOOTER EN MÓVIL === */
+    .footer-logo {
+        display: none; 
+    }
+    /* ======================================================= */
+}
+/* Estilo de cuadrito para el botón PDF */
+.pdf-box-btn {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    
+    /* Colores y Borde */
+    color: var(--text-light) !important;
+    background-color: rgba(0, 188, 212, 0.15); /* Fondo cian muy sutil */
+    border: 1.5px solid var(--primary-color);
+    
+    /* Espaciado y Forma */
+    padding: 3px 8px;
+    margin-left: 8px;
+    border-radius: 4px; /* Cuadradito con esquinas apenas redondeadas */
+    
+    /* Tipografía */
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75em;
+    font-weight: bold;
+    
+    /* Efecto Neón */
+    box-shadow: 0 0 8px rgba(0, 188, 212, 0.4);
+    transition: all 0.3s ease;
+    vertical-align: middle;
+}
+
+/* Icono dentro del cuadrito */
+.pdf-box-btn i {
+    margin-right: 6px;
+    color: var(--primary-color) !important; /* Color Cian */
+    font-size: 1.1em; /* Un poco más grande para que destaque */
+    filter: drop-shadow(0 0 2px var(--primary-color)); /* Pequeño resplandor al icono */
+}
+/* Efecto al pasar el mouse (Hover) */
+.pdf-box-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--background-dark) !important;
+    box-shadow: 0 0 15px var(--primary-color);
+    transform: translateY(-1px);
+}
+
+.pdf-box-btn:hover i {
+    color: var(--background-dark) !important;
+}
+/* Estilo del mensaje de protección centrado */
+.protection-popup {
+    position: fixed;
+    /* Posicionamiento exacto en el centro */
+    top: 50%;
+    left: 50%;
+    /* El transform asegura el centrado y el efecto de escala inicial */
+    transform: translate(-50%, -50%) scale(0.5);
+    
+    background: rgba(26, 26, 46, 0.98); /* Fondo casi opaco para legibilidad */
+    color: var(--primary-color);
+    padding: 20px 40px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px; /* Bordes un poco más rectos para look técnico */
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1em;
+    z-index: 10000; /* Asegura que esté por encima de TODO */
+    
+    /* Brillo Neón */
+    box-shadow: 0 0 30px var(--primary-color), inset 0 0 10px rgba(0, 188, 212, 0.2);
+    
+    /* Transiciones suaves */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column; /* Icono arriba, texto abajo */
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+/* Estado cuando se muestra */
+.protection-popup.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* Estilo del icono dentro del popup */
+.protection-popup i {
+    font-size: 2.5em;
+    filter: drop-shadow(0 0 5px var(--primary-color));
+}
+/* Protección extra de contenido */
+body {
+    -webkit-user-select: none; 
+    -moz-user-select: none;    
+    -ms-user-select: none;     
+    user-select: none;         /* Evita seleccionar texto */
+}
+
+img {
+    -webkit-user-drag: none;
+    user-drag: none;           /* Evita arrastrar imágenes */
+    pointer-events: none;      /* Evita interactuar con imágenes */
+}
+
+/* Permitir selección solo en campos de texto (si llegas a poner un formulario) */
+input, textarea {
+    user-select: text;
+}
+/* ========================================================== */
+/* ESTILO Y POSICIONAMIENTO DEL RELOJ EN TIEMPO REAL (FINAL) */
+/* ========================================================== */
+#live-clock {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    z-index: 50;
+    text-align: right;
+    
+    /* Estilo Neón */
+    font-family: 'Orbitron', sans-serif;
+    color: var(--glow-color);
+    text-shadow: 
+        0 0 7px var(--glow-color), 
+        0 0 15px rgba(0, 188, 212, 0.5);
+    
+    /* Fondo y forma ovalada en PC */
+    border: 1px solid rgba(0, 188, 212, 0.2);
+    padding: 8px 18px; /* Espacio horizontal para el óvalo */
+    background-color: rgba(15, 15, 29, 0.7);
+    
+    /* ✅ Forma ovalada en PC */
+    border-radius: 50%; 
+}
+
+#clock-time {
+    display: block;
+    /* REDUCIDO: Hora más pequeña */
+    font-size: 1.1em; 
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+#clock-date {
+    display: block;
+    /* AUMENTADO: Fecha más grande */
+    font-size: 1.3em; 
+    font-weight: 400;
+}
+
+/* Media Query para el reloj en móviles (max-width: 768px) */
+@media (max-width: 768px) {
+    #live-clock {
+        top: 10px;
+        right: 50%;
+        transform: translateX(50%);
+        text-align: center;
+        
+        /* Ajuste de padding para móvil */
+        padding: 8px 25px;
+        
+        /* ✅ Solución para mantener el óvalo en móvil */
+        border-radius: 50%; 
+    }
+    #clock-time {
+        /* Hora más pequeña en móvil */
+        font-size: 0.9em; 
+    }
+    #clock-date {
+        /* Fecha más grande en móvil */
+        font-size: 1.1em; 
+    }
+}

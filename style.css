@@ -1178,33 +1178,38 @@ input, textarea {
     
     /* ✅ ELIMINADO: Borde, Padding, Fondo, Box-Shadow y Border-Radius */
 }
+/* TAMAÑOS (Se mantienen Fecha Grande y Hora Pequeña) */
 #clock-time {
     display: block;
-    /* Mismo tamaño base */
-    font-size: 1.2em; 
-    /* ✅ CAMBIO CLAVE: Cambiamos a grosor 400 para que se iguale al de la fecha */
-    font-weight: 400; 
+    font-size: 1.1em; /* Hora: Pequeña */
+    font-weight: 700;
     margin-bottom: 2px;
 }
 
 #clock-date {
     display: block;
-    /* Mismo tamaño base */
-    font-size: 1.2em; 
+    font-size: 1.3em; /* Fecha: Grande */
     font-weight: 400;
 }
 
-/* Y aseguramos el mismo cambio en la Media Query */
+/* Media Query para móvil (Aseguramos que el contorno se mantenga) */
 @media (max-width: 768px) {
     #live-clock {
-        /* ... estilos de posicionamiento ... */
+        top: 10px;
+        right: 50%;
+        transform: translateX(50%);
+        text-align: center;
+        
+        padding: 8px 25px;
+        border-radius: 50%; 
+        /* Repetimos la transparencia y el brillo en móvil */
+        background-color: transparent;
+        box-shadow: 0 0 10px var(--glow-color); 
     }
     #clock-time {
-        font-size: 1.0em; 
-        font-weight: 400; /* Aseguramos el mismo grosor */
+        font-size: 0.9em; 
     }
     #clock-date {
-        font-size: 1.0em; 
-        font-weight: 400;
+        font-size: 1.1em; 
     }
 }

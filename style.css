@@ -1157,47 +1157,55 @@ input, textarea {
     user-select: text;
 }
 /* ========================================================== */
-/* ESTILO Y POSICIONAMIENTO DEL RELOJ EN TIEMPO REAL (FINAL) */
+/* ESTILO Y POSICIONAMIENTO DEL RELOJ (SOLO CONTORNO/NEÓN) */
 /* ========================================================== */
 #live-clock {
+    /* POSICIONAMIENTO: Esquina superior derecha */
     position: absolute;
     top: 20px;
     right: 25px;
     z-index: 50;
     text-align: right;
     
-    /* Estilo Neón */
+    /* Fuente y Color Neón */
     font-family: 'Orbitron', sans-serif;
     color: var(--glow-color);
+    
+    /* Brillo Neón del TEXTO */
     text-shadow: 
         0 0 7px var(--glow-color), 
         0 0 15px rgba(0, 188, 212, 0.5);
     
-    /* Fondo y forma ovalada en PC */
-    border: 1px solid rgba(0, 188, 212, 0.2);
-    padding: 8px 18px; /* Espacio horizontal para el óvalo */
-    background-color: rgba(15, 15, 29, 0.7);
+    /* Borde, padding y forma */
+    /* ✅ CAMBIO CLAVE 1: Borde más grueso para que se vea el contorno */
+    border: 2px solid var(--primary-color); 
+    padding: 8px 18px; 
     
-    /* ✅ Forma ovalada en PC */
+    /* ✅ CAMBIO CLAVE 2: Eliminamos el fondo para hacerlo transparente */
+    background-color: transparent; 
+    
+    /* ✅ CAMBIO CLAVE 3: Agregamos el brillo al contorno */
+    box-shadow: 0 0 10px var(--glow-color); 
+    
+    /* Forma ovalada/redonda */
     border-radius: 50%; 
 }
 
+/* TAMAÑOS (Se mantienen Fecha Grande y Hora Pequeña) */
 #clock-time {
     display: block;
-    /* REDUCIDO: Hora más pequeña */
-    font-size: 1.1em; 
+    font-size: 1.1em; /* Hora: Pequeña */
     font-weight: 700;
     margin-bottom: 2px;
 }
 
 #clock-date {
     display: block;
-    /* AUMENTADO: Fecha más grande */
-    font-size: 1.3em; 
+    font-size: 1.3em; /* Fecha: Grande */
     font-weight: 400;
 }
 
-/* Media Query para el reloj en móviles (max-width: 768px) */
+/* Media Query para móvil (Aseguramos que el contorno se mantenga) */
 @media (max-width: 768px) {
     #live-clock {
         top: 10px;
@@ -1205,18 +1213,16 @@ input, textarea {
         transform: translateX(50%);
         text-align: center;
         
-        /* Ajuste de padding para móvil */
         padding: 8px 25px;
-        
-        /* ✅ Solución para mantener el óvalo en móvil */
         border-radius: 50%; 
+        /* Repetimos la transparencia y el brillo en móvil */
+        background-color: transparent;
+        box-shadow: 0 0 10px var(--glow-color); 
     }
     #clock-time {
-        /* Hora más pequeña en móvil */
         font-size: 0.9em; 
     }
     #clock-date {
-        /* Fecha más grande en móvil */
         font-size: 1.1em; 
     }
 }

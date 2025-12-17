@@ -1192,24 +1192,24 @@ input, textarea {
     font-weight: 400;
 }
 
-/* Media Query para móvil (Aseguramos que el contorno se mantenga) */
+/* Media Query para móvil (LIMPIA: Solo reposicionamiento y ajuste de tamaño) */
 @media (max-width: 768px) {
     #live-clock {
+        /* POSICIONAMIENTO: Centrado en la parte superior del móvil */
         top: 10px;
         right: 50%;
         transform: translateX(50%);
         text-align: center;
         
-        padding: 8px 25px;
-        border-radius: 50%; 
-        /* Repetimos la transparencia y el brillo en móvil */
-        background-color: transparent;
-        box-shadow: 0 0 10px var(--glow-color); 
+        /* ✅ LÍNEAS ELIMINADAS: padding, border-radius, background-color, box-shadow */
     }
     #clock-time {
         font-size: 0.9em; 
+        font-weight: 600; /* Hereda de la regla general */
+        margin-bottom: 0;
     }
     #clock-date {
         font-size: 1.1em; 
+        font-weight: 400; /* Hereda de la regla general */
     }
 }

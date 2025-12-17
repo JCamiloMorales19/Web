@@ -1178,38 +1178,33 @@ input, textarea {
     
     /* ✅ ELIMINADO: Borde, Padding, Fondo, Box-Shadow y Border-Radius */
 }
-
 #clock-time {
     display: block;
-    /* ✅ HORA Y FECHA CON EL MISMO TAMAÑO */
+    /* Mismo tamaño base */
     font-size: 1.2em; 
-    font-weight: 750;
+    /* ✅ CAMBIO CLAVE: Cambiamos a grosor 400 para que se iguale al de la fecha */
+    font-weight: 400; 
     margin-bottom: 2px;
 }
 
 #clock-date {
     display: block;
-    /* ✅ HORA Y FECHA CON EL MISMO TAMAÑO */
+    /* Mismo tamaño base */
     font-size: 1.2em; 
     font-weight: 400;
 }
 
-/* Media Query para móvil */
+/* Y aseguramos el mismo cambio en la Media Query */
 @media (max-width: 768px) {
     #live-clock {
-        /* POSICIONAMIENTO: Centrado en la parte superior del móvil */
-        top: 10px;
-        right: 50%;
-        transform: translateX(50%);
-        text-align: center;
-        /* Estilos de contorno eliminados */
+        /* ... estilos de posicionamiento ... */
     }
     #clock-time {
-        /* Mismo tamaño en móvil */
         font-size: 1.0em; 
+        font-weight: 400; /* Aseguramos el mismo grosor */
     }
     #clock-date {
-        /* Mismo tamaño en móvil */
         font-size: 1.0em; 
+        font-weight: 400;
     }
 }

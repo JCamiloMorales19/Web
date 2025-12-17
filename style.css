@@ -1157,7 +1157,7 @@ input, textarea {
     user-select: text;
 }
 /* ========================================================== */
-/* ESTILO Y POSICIONAMIENTO DEL RELOJ (SOLO CONTORNO/NEÓN) */
+/* ESTILO Y POSICIONAMIENTO DEL RELOJ (SIN CONTORNO) */
 /* ========================================================== */
 #live-clock {
     /* POSICIONAMIENTO: Esquina superior derecha */
@@ -1176,53 +1176,40 @@ input, textarea {
         0 0 7px var(--glow-color), 
         0 0 15px rgba(0, 188, 212, 0.5);
     
-    /* Borde, padding y forma */
-    /* ✅ CAMBIO CLAVE 1: Borde más grueso para que se vea el contorno */
-    border: 2px solid var(--primary-color); 
-    padding: 8px 18px; 
-    
-    /* ✅ CAMBIO CLAVE 2: Eliminamos el fondo para hacerlo transparente */
-    background-color: transparent; 
-    
-    /* ✅ CAMBIO CLAVE 3: Agregamos el brillo al contorno */
-    box-shadow: 0 0 10px var(--glow-color); 
-    
-    /* Forma ovalada/redonda */
-    border-radius: 50%; 
+    /* ✅ ELIMINADO: Borde, Padding, Fondo, Box-Shadow y Border-Radius */
 }
 
-/* TAMAÑOS (Se mantienen Fecha Grande y Hora Pequeña) */
 #clock-time {
     display: block;
-    font-size: 1.1em; /* Hora: Pequeña */
+    /* ✅ HORA Y FECHA CON EL MISMO TAMAÑO */
+    font-size: 1.2em; 
     font-weight: 700;
     margin-bottom: 2px;
 }
 
 #clock-date {
     display: block;
-    font-size: 1.3em; /* Fecha: Grande */
+    /* ✅ HORA Y FECHA CON EL MISMO TAMAÑO */
+    font-size: 1.2em; 
     font-weight: 400;
 }
 
-/* Media Query para móvil (Aseguramos que el contorno se mantenga) */
+/* Media Query para móvil */
 @media (max-width: 768px) {
     #live-clock {
+        /* POSICIONAMIENTO: Centrado en la parte superior del móvil */
         top: 10px;
         right: 50%;
         transform: translateX(50%);
         text-align: center;
-        
-        padding: 8px 25px;
-        border-radius: 50%; 
-        /* Repetimos la transparencia y el brillo en móvil */
-        background-color: transparent;
-        box-shadow: 0 0 10px var(--glow-color); 
+        /* Estilos de contorno eliminados */
     }
     #clock-time {
-        font-size: 0.9em; 
+        /* Mismo tamaño en móvil */
+        font-size: 1.0em; 
     }
     #clock-date {
-        font-size: 1.1em; 
+        /* Mismo tamaño en móvil */
+        font-size: 1.0em; 
     }
 }

@@ -1391,3 +1391,34 @@ html {
     transform: translateY(-5px);
     background: rgba(30, 30, 30, 0.8);
 }
+/* FUERZA EL ESTILO DE LAS NOTICIAS PARA GITHUB */
+#noticias-tech {
+    background: rgba(10, 10, 10, 0.9) !important;
+    border: 1px solid var(--primary-color) !important;
+    padding: 40px 20px !important;
+    margin-top: 50px !important;
+}
+
+.news-grid-container {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 25px !important;
+    width: 100% !important;
+}
+
+.news-card {
+    background: #111 !important; /* Fondo oscuro sólido por si falla el translúcido */
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 25px !important;
+    position: relative !important;
+}
+
+.tab-btn {
+    display: inline-block !important;
+    text-align: center !important;
+    margin: 5px !important;
+}
+:root {
+    --primary-color: #00bcd4; /* O el color neón que estés usando */
+    --background-dark: #0a0a0a;
+}

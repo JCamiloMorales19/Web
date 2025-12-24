@@ -1156,3 +1156,238 @@ img {
 input, textarea {
     user-select: text;
 }
+/* ========================================================== */
+/* ESTILOS PARA LA SECCIÓN DE NOTICIAS TECH */
+/* ========================================================== */
+
+/* Espaciado para que la sección de noticias respire */
+#noticias-tech {
+    margin-top: 50px;
+    margin-bottom: 80px;
+    border: 1px solid var(--primary-color);
+}
+
+/* Contenedor Grid para las tarjetas de noticias */
+.news-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Estilo de cada tarjeta de noticia */
+.news-card {
+    background: rgba(0, 0, 0, 0.4);
+    border-left: 3px solid var(--primary-color);
+    padding: 20px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.news-card:hover {
+    background: rgba(0, 188, 212, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 188, 212, 0.2);
+}
+
+/* Título de la noticia */
+.news-card h4 {
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    color: var(--text-light);
+    font-family: 'Montserrat', sans-serif; /* Más legible para títulos largos */
+    height: 3em; /* Mantiene alineados los botones */
+    overflow: hidden;
+}
+
+/* Enlace "Leer reporte" */
+.news-card a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.news-card a i {
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
+/* Animación de carga */
+.loading-news {
+    text-align: center;
+    color: var(--primary-color);
+    font-family: 'Orbitron', sans-serif;
+    grid-column: 1 / -1;
+    padding: 40px;
+    letter-spacing: 2px;
+}
+
+/* Asegurar scroll suave para el botón del menú */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ajuste de separación para el grid de tus otras secciones */
+.sections-grid {
+    gap: 60px 30px; /* 60px de separación vertical entre tus cuadros actuales */
+}
+/* CONTENEDOR DE BOTONES DE NOTICIAS */
+.news-tabs {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center;
+    gap: 10px;               /* Espacio entre botones */
+    margin: 20px auto 40px auto; 
+    max-width: 90%;          /* No permite que se peguen a los bordes del cuadro */
+    flex-wrap: wrap;         /* Si el cuadro es pequeño (móvil), se ponen uno abajo del otro */
+}
+
+/* ESTILO DE LOS BOTONES */
+.tab-btn {
+    background: rgba(0, 0, 0, 0.6); /* Fondo oscuro translúcido */
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 12px 25px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    flex: 1;                 /* Hace que todos ocupen el mismo ancho disponible */
+    min-width: 150px;        /* Evita que se hagan demasiado pequeños */
+    max-width: 250px;        /* Evita que se estiren demasiado */
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;        /* Estilo cuadrado futurista */
+}
+
+/* EFECTO AL PASAR EL MOUSE (HOVER) */
+.tab-btn:hover {
+    background: var(--primary-color);
+    color: #000;
+    box-shadow: 0 0 20px var(--primary-color), 0 0 40px rgba(0, 188, 212, 0.4);
+    transform: translateY(-3px);
+}
+
+/* BOTÓN ACTIVO (PÁGINA SELECCIONADA) */
+.tab-btn.active {
+    background: var(--primary-color);
+    color: #000;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5), 0 0 15px var(--primary-color);
+    border: 1px solid #fff;
+}
+
+/* DECORACIÓN EXTRA: Línea de terminal debajo de los botones */
+.news-tabs::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    width: 50px;
+    height: 2px;
+    background: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+/* AJUSTE PARA EL CONTENEDOR DE NOTICIAS */
+.news-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 10px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+/* --- CONTENEDOR DE BOTONES --- */
+.news-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px auto 40px;
+    flex-wrap: wrap;
+    max-width: 95%;
+}
+
+.tab-btn {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 12px 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 160px;
+    max-width: 220px;
+    text-transform: uppercase;
+}
+
+.tab-btn:hover, .tab-btn.active {
+    background: var(--primary-color);
+    color: #000;
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+/* --- ESTILO BASE DEL TAG --- */
+.news-status-tag {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.6rem;
+    padding: 4px 12px;
+    display: inline-block;
+    margin-bottom: 15px;
+    letter-spacing: 1.5px;
+    clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0% 30%);
+    position: relative;
+}
+
+.news-status-tag::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 8px;
+    animation: blink-tag 1s infinite;
+}
+
+@keyframes blink-tag {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+/* --- CONFIGURACIÓN DE COLORES POR CATEGORÍA --- */
+
+/* Ciberseguridad (Rojo) */
+.tag-cyber { color: #ff4444; border: 1px solid #ff4444; background: rgba(255, 68, 68, 0.1); }
+.tag-cyber::before { background: #ff4444; box-shadow: 0 0 5px #ff4444; }
+.border-cyber { border-left: 4px solid #ff4444 !important; }
+
+/* Cloud (Azul Azure) */
+.tag-cloud { color: #00e5ff; border: 1px solid #00e5ff; background: rgba(0, 229, 255, 0.1); }
+.tag-cloud::before { background: #00e5ff; box-shadow: 0 0 5px #00e5ff; }
+.border-cloud { border-left: 4px solid #00e5ff !important; }
+
+/* IA (Violeta) */
+.tag-ia { color: #bc00ff; border: 1px solid #bc00ff; background: rgba(188, 0, 255, 0.1); }
+.tag-ia::before { background: #bc00ff; box-shadow: 0 0 5px #bc00ff; }
+.border-ia { border-left: 4px solid #bc00ff !important; }
+
+/* --- AJUSTE DE TARJETAS --- */
+.news-card {
+    background: rgba(20, 20, 20, 0.6);
+    padding: 25px;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    background: rgba(30, 30, 30, 0.8);
+}

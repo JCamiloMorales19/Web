@@ -1422,3 +1422,247 @@ html {
     --primary-color: #00bcd4; /* O el color neón que estés usando */
     --background-dark: #0a0a0a;
 }
+.visitor-counter {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    color: var(--primary-color);
+    background: rgba(0, 188, 212, 0.05);
+    padding: 5px 15px;
+    border: 1px solid rgba(0, 188, 212, 0.3);
+    border-radius: 4px;
+    margin: 10px 0;
+    display: inline-block;
+}
+
+#count {
+    color: #fff;
+    text-shadow: 0 0 10px var(--primary-color);
+    letter-spacing: 2px;
+}
+.visitor-counter-hero {
+    margin-top: 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 188, 212, 0.3);
+    display: inline-block;
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.1);
+}
+
+#count {
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 0 10px var(--primary-color);
+    margin-left: 5px;
+}
+
+.blink {
+    animation: blinker 1.5s linear infinite;
+    margin-right: 5px;
+    color: #ff4444; /* Rojo para simular grabación/monitoreo */
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+.visitor-badge-container {
+    margin-top: 25px;
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border: 1px solid rgba(0, 188, 212, 0.4);
+    border-radius: 4px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.1);
+}
+
+.badge-header {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.6rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.visitor-badge-container img {
+    height: 25px; /* Ajusta el tamaño para que se vea nítido */
+    filter: drop-shadow(0 0 5px rgba(0, 188, 212, 0.5)); /* Le da el brillo neón */
+}
+
+.blink {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% { opacity: 0.2; }
+}
+.system-monitor-bar {
+    max-width: 1000px; /* Ajusta este valor al ancho de tus otros cuadros */
+    margin: 20px auto 40px auto;
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid rgba(0, 188, 212, 0.3);
+    border-top: 2px solid var(--primary-color);
+    padding: 10px 20px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.monitor-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.monitor-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.7rem;
+    color: var(--primary-color);
+}
+
+.monitor-item .label {
+    opacity: 0.7;
+}
+
+.monitor-item .value {
+    color: #fff;
+    text-shadow: 0 0 5px var(--primary-color);
+}
+
+/* Indicador parpadeante de sistema */
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    background: #00ff00;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00ff00;
+    animation: pulse-green 1.5s infinite;
+}
+
+/* Estilo para la Badge dentro de la barra */
+.counter-main img {
+    height: 20px;
+    filter: hue-rotate(180deg) brightness(1.2); /* Ajusta color si es necesario */
+}
+
+@keyframes pulse-green {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+/* Ajuste móvil */
+@media (max-width: 600px) {
+    .monitor-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.system-monitor-large {
+    margin: 40px auto !important;
+    padding: 30px !important;
+    border: 1px solid var(--primary-color) !important;
+    background: rgba(5, 5, 5, 0.9) !important;
+    text-align: center;
+}
+
+.monitor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 188, 212, 0.2);
+    padding-bottom: 10px;
+}
+
+.monitor-display-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.display-box {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.display-box:hover {
+    border-color: var(--primary-color);
+    box-shadow: inset 0 0 15px rgba(0, 188, 212, 0.1);
+}
+
+.display-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.display-value {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+/* Estilo para que la Badge se vea gigante */
+.badge-wrapper img {
+    height: 35px; /* Aumentamos el tamaño de la badge */
+    filter: drop-shadow(0 0 10px rgba(0, 188, 212, 0.5));
+    transform: scale(1.2); /* La hacemos un poco más grande físicamente */
+}
+
+/* Indicador LIVE */
+.live-indicator {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    color: #ff4444;
+}
+
+.live-indicator .dot {
+    height: 8px;
+    width: 8px;
+    background-color: #ff4444;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+    box-shadow: 0 0 8px #ff4444;
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+.mode-secure {
+    color: #00ff00 !important;
+    text-shadow: 0 0 10px #00ff00 !important;
+}
+#real-time-clock {
+    font-size: 0.85rem !important; /* Un poco más pequeño para que entre todo el timestamp */
+    letter-spacing: 1px;
+    white-space: nowrap; /* Evita que se rompa en dos líneas */
+    color: #00e5ff;
+}
+#real-time-clock {
+    display: block;
+    min-width: 280px; /* Asegura que el cuadro no salte de tamaño al cambiar los números */
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+}

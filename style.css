@@ -2359,3 +2359,38 @@ main {
     position: relative;
     z-index: 2;
 }
+/* --- SECCIÓN DE CERTIFICACIONES (Dentro de Habilidades) --- */
+#certificaciones.futuristic-card {
+    position: relative;
+    overflow: hidden;
+    background: #000 !important;
+    border: 1px solid rgba(103, 58, 183, 0.3); /* Un toque púrpura para variar del cian */
+}
+
+#certificaciones.futuristic-card::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    /* Recomiendo una imagen de servidores o tecnología */
+    background-image: url('imagenes/certificados-bg.jpg') !important; 
+    background-size: cover !important;
+    background-position: center !important;
+    filter: brightness(0.25); /* Más oscuro para que resalten los logos */
+    z-index: 0;
+}
+
+/* Asegurar que el slider de certificados esté por encima */
+.cert-slider, .section-title {
+    position: relative;
+    z-index: 1;
+}
+
+/* Mejora para las tarjetas de certificados individuales */
+.cert-card {
+    background: rgba(20, 20, 20, 0.7) !important;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 188, 212, 0.2);
+}

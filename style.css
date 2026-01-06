@@ -2313,3 +2313,48 @@ main {
     0% { top: 0; }
     100% { top: 100%; }
 }
+/* 1. Preparamos la tarjeta base (Limpiamos el fondo) */
+.futuristic-card {
+    position: relative; /* Crucial para los fondos */
+    padding: 35px;
+    margin-bottom: 35px;
+    background-color: #000 !important; /* Fondo negro base */
+    border-radius: 12px;
+    border: 1px solid rgba(0, 188, 212, 0.2);
+    overflow: hidden; /* Corta la imagen en las esquinas redondeadas */
+    z-index: 1;
+}
+
+/* 2. Capa de imagen universal para todas las secciones */
+.futuristic-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    filter: brightness(0.35); /* Aquí controlas la oscuridad general */
+    z-index: -1; /* Se va al fondo del cuadro */
+    transition: transform 0.5s ease;
+}
+
+/* 3. Asignación de imágenes (Rutas corregidas) */
+/* Asegúrate que la carpeta se llame 'imagenes' y no 'Images' o 'img' */
+.section-bg-1::before { background-image: url('imagenes/bg-perfil.jpg'); }
+.section-bg-2::before { background-image: url('imagenes/bg-experiencia.jpg'); }
+.section-bg-3::before { background-image: url('imagenes/bg-habilidades.jpg'); }
+.section-bg-4::before { background-image: url('imagenes/bg-servicios.jpg'); }
+.section-bg-5::before { background-image: url('imagenes/bg-proyectos.jpg'); }
+.section-bg-6::before { background-image: url('imagenes/bg-contacto.jpg'); }
+
+/* 4. Efecto de zoom al pasar el mouse (Opcional pero recomendado) */
+.futuristic-card:hover::before {
+    transform: scale(1.1);
+    filter: brightness(0.45);
+}
+
+/* 5. Asegurar que el contenido sea legible y esté arriba */
+.futuristic-card > * {
+    position: relative;
+    z-index: 2;
+}

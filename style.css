@@ -2394,3 +2394,33 @@ main {
     backdrop-filter: blur(8px);
     border: 1px solid rgba(0, 188, 212, 0.2);
 }
+/* Color para todos los enlaces del portafolio (GitHub, Goump, etc.) */
+a {
+    color: #ffffff !important; /* Texto en blanco */
+    text-decoration: none;      /* Quita el subrayado */
+    font-weight: 600;           /* Un poco más grueso */
+    transition: all 0.3s ease;  /* Animación suave */
+    position: relative;
+}
+
+/* Efecto cuando pasas el mouse (Hover) */
+a:hover {
+    color: var(--primary-color) !important; /* Cambia al cian de tu tema */
+    text-shadow: 0 0 10px rgba(0, 188, 212, 0.6); /* Brillo neón */
+}
+
+/* Opcional: Una línea animada debajo del enlace */
+a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%; /* La línea crece al pasar el mouse */
+}

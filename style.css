@@ -2345,7 +2345,7 @@ main {
 .section-bg-3::before { background-image: url('imagenes/bg-habilidades.jpg'); }
 .section-bg-4::before { background-image: url('imagenes/bg-servicios.jpg'); }
 .section-bg-5::before { background-image: url('imagenes/bg-proyectos.jpg'); }
-.section-bg-6::before { background-image: url('imagenes/bg-contacto.jpg'); }
+.section-bg-6::before { background-image: url('imagenes/contacto-bg.jpg'); }
 .section-bg-7::before { background-image: url('imagenes/bg-footer.jpg'); }
 
 /* 4. Efecto de zoom al pasar el mouse (Opcional pero recomendado) */

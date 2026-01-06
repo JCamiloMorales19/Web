@@ -1668,23 +1668,24 @@ html {
 }
 /* EFECTO GLOW DEL CURSOR */
 .cursor-glow {
-    width: 250px;
-    height: 150px;
-    background: radial-gradient(circle, rgba(0, 188, 212, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
-    border-radius: 50%;
     position: fixed;
-    pointer-events: none; /* Crucial: permite hacer clic a través del brillo */
-    z-index: 9999;
+    width: 400px; /* Aumentado: antes era más pequeño */
+    height: 400px; /* Aumentado */
+    background: radial-gradient(circle, rgba(0, 188, 212, 0.4) 0%, rgba(0, 188, 212, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
     transform: translate(-50%, -50%);
+    z-index: 9999;
+    mix-blend-mode: screen; /* Esto hace que brille más sobre otros colores */
+    filter: blur(20px); /* Un poco de desenfoque para que no se vea un círculo sólido */
     transition: width 0.3s, height 0.3s;
-    mix-blend-mode: screen; /* Hace que el color resalte sobre el fondo oscuro */
 }
 
-/* Efecto cuando pasas sobre algo que se puede clicar */
+/* Efecto cuando pasas sobre algo interactivo (opcional) */
 .cursor-glow.active {
-    width: 450px;
-    height: 450px;
-    background: radial-gradient(circle, rgba(0, 188, 212, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 188, 212, 0.6) 0%, rgba(0, 188, 212, 0) 70%);
 }
 /* Contenedor General */
 .document-section {
@@ -2104,4 +2105,49 @@ html {
     border: 2px solid #fff;
     border-radius: 50%;
     box-shadow: 0 0 5px #ff4444;
+}
+@media (max-width: 768px) {
+    /* Ajustar el Header/Hero */
+    .hero-section {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .profile-avatar {
+        width: 150px; /* Foto más pequeña en cel */
+        height: 150px;
+    }
+
+    /* Navegación: Hacer que los botones se apilen o se vuelvan más pequeños */
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
+
+    /* Ajustar las columnas de Servicios */
+    .services-list {
+        display: flex;
+        flex-direction: column; /* De 2 columnas a 1 sola */
+    }
+
+    .service-column {
+        width: 100%;
+    }
+
+    /* Ajustar las cuadrículas de habilidades */
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+
+    /* Títulos más pequeños para que no se corten */
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.2rem; }
+    h3 { font-size: 1.1rem; }
 }

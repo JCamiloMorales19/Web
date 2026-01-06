@@ -2151,3 +2151,85 @@ html {
     h2 { font-size: 1.2rem; }
     h3 { font-size: 1.1rem; }
 }
+/* --- AJUSTES DE RESPONSIVIDAD GLOBAL --- */
+
+/* Asegura que nada se salga del borde de la pantalla */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+main {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.futuristic-card {
+    width: 100% !important;
+    max-width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box;
+}
+
+/* Ajuste para el Centro de Documentación (Los botones de PDF) */
+.document-grid {
+    display: flex;
+    flex-direction: column; /* Se apilan en celular */
+    gap: 20px;
+}
+
+/* Ajuste para las Noticias (Las tarjetas de noticias) */
+.news-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Se ajustan solas */
+    gap: 15px;
+}
+
+/* Ajuste para los Servicios (Las dos columnas de texto) */
+.services-list {
+    display: flex;
+    flex-direction: column; /* De 2 columnas a 1 sola en celular */
+}
+
+.service-column {
+    width: 100% !important;
+}
+
+/* Ajuste para el Panel de Tráfico (Los contadores) */
+.monitor-display-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Una sola columna en el panel de visitas */
+    gap: 10px;
+}
+
+/* Ajustes para el Menú de Navegación */
+nav {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones bajen si no caben */
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+}
+
+nav a {
+    font-size: 12px; /* Letra un poco más pequeña en móvil */
+    padding: 8px;
+}
+
+/* Media Query para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 1.5rem;
+    }
+    
+    .profile-avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .tag {
+        font-size: 10px;
+    }
+}

@@ -2227,3 +2227,15 @@ main {
         grid-template-columns: repeat(3, 1fr); /* Tres columnas de noticias en PC */
     }
 }
+.futuristic-card {
+    background: rgba(255, 255, 255, 0.05); /* Fondo semi-transparente */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque de fondo */
+    border: 1px solid rgba(0, 188, 212, 0.3); /* Borde neón sutil */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.futuristic-card:hover {
+    transform: translateY(-5px); /* Se eleva un poco al pasar el mouse */
+    border: 1px solid rgba(0, 188, 212, 0.8); /* El borde brilla más */
+}

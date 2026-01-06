@@ -1666,3 +1666,442 @@ html {
     letter-spacing: 1px;
     text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
 }
+/* EFECTO GLOW DEL CURSOR */
+.cursor-glow {
+    width: 250px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(0, 188, 212, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none; /* Crucial: permite hacer clic a través del brillo */
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+    mix-blend-mode: screen; /* Hace que el color resalte sobre el fondo oscuro */
+}
+
+/* Efecto cuando pasas sobre algo que se puede clicar */
+.cursor-glow.active {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(0, 188, 212, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
+}
+/* Contenedor General */
+.document-section {
+    padding: 30px !important;
+    margin: 40px auto;
+    background: rgba(15, 15, 15, 0.9) !important;
+}
+
+.section-subtitle {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.document-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.group-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(0, 188, 212, 0.2);
+    padding-bottom: 8px;
+}
+
+.button-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* El Botón Formal */
+.btn-formal {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 20px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-left: 4px solid #444; /* Borde de acento neutral */
+    color: #efefef;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-family: 'Montserrat', sans-serif; /* Fuente más legible para adultos */
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+/* Colores de acento sutiles */
+.btn-formal.ES { border-left-color: #00bcd4; } /* Cian para ES */
+.btn-formal.EN { border-left-color: #5c6bc0; } /* Azul suave para EN */
+
+.btn-formal i {
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Hover: Feedback claro sin ser "pesado" */
+.btn-formal:hover {
+    background: #252525;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .document-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* El Botón Formal con Texto Blanco Resaltado */
+.btn-formal {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 20px;
+    background: #1a1a1a; /* Fondo oscuro sólido */
+    border: 1px solid #444; /* Borde visible */
+    border-left: 5px solid #444; /* Borde lateral más grueso */
+    
+    /* MEJORA DE TEXTO */
+    color: #FFFFFF !important; /* Blanco puro forzado */
+    font-weight: 600; /* Letra semi-negrita para que no sea delgada */
+    text-transform: uppercase; /* Mayúsculas para un look más profesional y legible */
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+/* Colores de los iconos para que guíen la vista */
+.btn-formal i {
+    font-size: 1.2rem;
+    width: 25px;
+    text-align: center;
+    color: var(--primary-color); /* El icono mantiene el color neón para el toque tech */
+}
+
+/* Hover: El botón se ilumina más al pasar el mouse */
+.btn-formal:hover {
+    background: #2a2a2a;
+    border-color: #ffffff; /* El borde cambia a blanco al pasar el mouse */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Diferenciadores de idioma por borde lateral */
+.btn-formal.ES { border-left-color: #00bcd4; } /* Cian vibrante */
+.btn-formal.EN { border-left-color: #5c6bc0; } /* Azul real */
+.section-subtitle {
+    color: #FFFFFF !important; /* Blanco puro para máxima visibilidad */
+    font-size: 1rem; /* Aumentamos un poco el tamaño */
+    font-weight: 500; /* Grosor medio para que no sea muy delgada */
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 1 !important; /* Aseguramos que no tenga transparencia */
+    letter-spacing: 0.5px; /* Mejora la lectura */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Sombra suave para separar del fondo */
+}
+.cert-slider {
+    overflow: hidden;
+    padding: 20px 0;
+    position: relative;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.cert-track {
+    display: flex;
+    width: calc(250px * 10);
+    animation: scroll 30s linear infinite;
+}
+
+.cert-track:hover {
+    animation-play-state: paused; /* Se detiene al pasar el mouse */
+}
+
+.cert-card {
+    width: 250px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-right: 1px solid rgba(0, 188, 212, 0.2);
+}
+
+.cert-card i {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.cert-card p {
+    font-size: 0.75rem;
+    color: #FFF;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    padding: 0 10px;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-250px * 5)); }
+}
+.whatsapp-float {
+    position: fixed;
+    width: 70px;
+    height: 0px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: pulse-wa 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(37, 211, 102, 0.9);
+}
+
+.tooltip-wa {
+    position: absolute;
+    right: 75px;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    border: 1px solid #25d366;
+}
+
+.whatsapp-float:hover .tooltip-wa {
+    opacity: 1;
+}
+
+@keyframes pulse-wa {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+/* El Botón Formal con Texto Blanco Resaltado */
+.btn-formal {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 20px;
+    background: #1a1a1a; /* Fondo oscuro sólido */
+    border: 1px solid #444; /* Borde visible */
+    border-left: 5px solid #444; /* Borde lateral más grueso */
+    
+    /* MEJORA DE TEXTO */
+    color: #FFFFFF !important; /* Blanco puro forzado */
+    font-weight: 600; /* Letra semi-negrita para que no sea delgada */
+    text-transform: uppercase; /* Mayúsculas para un look más profesional y legible */
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+/* Colores de los iconos para que guíen la vista */
+.btn-formal i {
+    font-size: 1.2rem;
+    width: 25px;
+    text-align: center;
+    color: var(--primary-color); /* El icono mantiene el color neón para el toque tech */
+}
+
+/* Hover: El botón se ilumina más al pasar el mouse */
+.btn-formal:hover {
+    background: #2a2a2a;
+    border-color: #ffffff; /* El borde cambia a blanco al pasar el mouse */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Diferenciadores de idioma por borde lateral */
+.btn-formal.ES { border-left-color: #00bcd4; } /* Cian vibrante */
+.btn-formal.EN { border-left-color: #5c6bc0; } /* Azul real */
+/* El Botón Formal con Texto Blanco Resaltado */
+.btn-formal {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 20px;
+    background: #1a1a1a; /* Fondo oscuro sólido */
+    border: 1px solid #444; /* Borde visible */
+    border-left: 5px solid #444; /* Borde lateral más grueso */
+    
+    /* MEJORA DE TEXTO */
+    color: #FFFFFF !important; /* Blanco puro forzado */
+    font-weight: 600; /* Letra semi-negrita para que no sea delgada */
+    text-transform: uppercase; /* Mayúsculas para un look más profesional y legible */
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+/* Colores de los iconos para que guíen la vista */
+.btn-formal i {
+    font-size: 1.2rem;
+    width: 25px;
+    text-align: center;
+    color: var(--primary-color); /* El icono mantiene el color neón para el toque tech */
+}
+
+/* Hover: El botón se ilumina más al pasar el mouse */
+.btn-formal:hover {
+    background: #2a2a2a;
+    border-color: #ffffff; /* El borde cambia a blanco al pasar el mouse */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Diferenciadores de idioma por borde lateral */
+.btn-formal.ES { border-left-color: #00bcd4; } /* Cian vibrante */
+.btn-formal.EN { border-left-color: #5c6bc0; } /* Azul real */
+.cert-slider {
+    overflow: hidden;
+    padding: 20px 0;
+    position: relative;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.cert-track {
+    display: flex;
+    width: calc(250px * 10);
+    animation: scroll 30s linear infinite;
+}
+
+.cert-track:hover {
+    animation-play-state: paused; /* Se detiene al pasar el mouse */
+}
+
+.cert-card {
+    width: 250px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-right: 1px solid rgba(0, 188, 212, 0.2);
+}
+
+.cert-card i {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.cert-card p {
+    font-size: 0.75rem;
+    color: #FFF;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    padding: 0 10px;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-250px * 5)); }
+}
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: pulse-wa 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(37, 211, 102, 0.9);
+}
+
+.tooltip-wa {
+    position: absolute;
+    right: 75px;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    border: 1px solid #25d366;
+}
+
+.whatsapp-float:hover .tooltip-wa {
+    opacity: 1;
+}
+
+@keyframes pulse-wa {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+.notify-dot {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 12px;
+    height: 12px;
+    background-color: #ff4444; /* Rojo alerta */
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #ff4444;
+}

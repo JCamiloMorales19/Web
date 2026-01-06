@@ -2424,3 +2424,20 @@ a::after {
 a:hover::after {
     width: 100%; /* La línea crece al pasar el mouse */
 }
+/* Seleccionamos el enlace en todos sus estados posibles */
+a, a:link, a:visited {
+    color: #ffffff !important;      /* Blanco obligatorio */
+    text-decoration: none !important; /* Sin subrayado */
+    transition: all 0.3s ease;
+}
+
+/* Estado cuando pasas el mouse */
+a:hover {
+    color: var(--primary-color) !important; /* Se vuelve cian */
+    text-shadow: 0 0 10px rgba(0, 188, 212, 0.8);
+}
+
+/* Estado cuando haces clic (momento exacto del click) */
+a:active {
+    color: #ffffff !important;
+}
